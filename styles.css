@@ -160,15 +160,33 @@ body {
     height: 40px;
     border-radius: 50%;
     transition: all 0.3s ease;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
 .theme-toggle:hover {
     background: var(--hover-bg);
+    border-color: var(--text-primary);
+    transform: scale(1.1);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+.theme-toggle:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
 }
 
 .theme-icon {
     font-size: 1.2rem;
     transition: transform 0.3s ease;
+    pointer-events: none;
+    user-select: none;
 }
 
 .theme-toggle:hover .theme-icon {
@@ -253,6 +271,22 @@ body {
     .toggle-line {
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
+    
+    .theme-toggle {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    .theme-icon {
+        font-size: 1.3rem;
+    }
+    
+    .theme-toggle:active {
+        background: var(--hover-bg);
+        transform: scale(0.9);
+    }
 }
 
 /* Touch-friendly improvements */
@@ -324,6 +358,21 @@ body {
     
     .work-preview:hover .work-overlay {
         transform: translateY(100%);
+    }
+    
+    .theme-toggle {
+        min-width: 44px;
+        min-height: 44px;
+        border-width: 2px;
+    }
+    
+    .theme-toggle:hover {
+        transform: none;
+    }
+    
+    .theme-toggle:active {
+        transform: scale(0.9);
+        background: var(--hover-bg);
     }
 }
 

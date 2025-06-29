@@ -8,6 +8,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Inline script to prevent theme flash -->
+    <script>
+        // Immediately apply theme to prevent flash
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('theme') || 'dark';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                
+                // Update theme icon immediately
+                const themeIcon = document.querySelector('.theme-icon');
+                if (themeIcon) {
+                    themeIcon.textContent = savedTheme === 'light' ? '☀️' : '🌙';
+                }
+            } catch (e) {
+                console.log('Theme initialization error:', e);
+            }
+        })();
+    </script>
 </head>
 <body>
     <!-- Skip to main content link for accessibility -->
@@ -31,7 +50,7 @@
                 <a href="#connect" class="nav-item" data-i18n="nav_connect">Contacto</a>
             </div>
             <button id="lang-toggle" class="nav-item" style="background:none;border:none;cursor:pointer;font-weight:600;font-size:1rem;">EN</button>
-            <button id="theme-toggle" class="nav-item theme-toggle" style="background:none;border:none;cursor:pointer;font-weight:600;font-size:1rem;">
+            <button id="theme-toggle" class="nav-item theme-toggle" style="background:none;border:none;cursor:pointer;font-weight:600;font-size:1rem;" aria-label="Cambiar tema">
                 <span class="theme-icon">🌙</span>
             </button>
             <div class="nav-toggle">
