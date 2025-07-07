@@ -133,7 +133,6 @@ body {
     font-size: 0.9rem;
     letter-spacing: 0.5px;
     position: relative;
-    transition: all 0.3s ease;
 }
 
 .nav-item::before {
@@ -144,7 +143,7 @@ body {
     width: 0;
     height: 1px;
     background: var(--text-primary);
-    transition: width 0.3s ease;
+    transition: width 0.12s cubic-bezier(0.7,0,0.3,1);
 }
 
 .nav-item:hover::before {
@@ -1160,7 +1159,6 @@ body {
 .footer-links a {
     color: var(--text-secondary);
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
@@ -1175,7 +1173,6 @@ body {
 .social-link {
     color: var(--text-secondary);
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 .social-link:hover {
